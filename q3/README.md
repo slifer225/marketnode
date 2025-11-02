@@ -12,7 +12,7 @@ Type-Safe Feature Flag System
 
 ## Architecture Overview
 
-![alt text](arch.png "Title")
+![alt text](arc.png "Title")
 
 Components function:
 
