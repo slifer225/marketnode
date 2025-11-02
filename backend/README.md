@@ -6,15 +6,15 @@ This service powers a lightweight task tracker with optimistic concurrency, filt
 
 ## 1. Tech Stack & Operations
 
-| Layer | Choice | Why it fits here |
-|-------|--------|------------------|
-| Runtime | **Node.js 20+** | Tight feedback loop, rich TypeScript ecosystem, effortless deployment to most environments. |
-| Framework | **NestJS 11** | Opinionated modular structure, DI container, built-in testing utilities, and first-class TypeScript support. |
-| Package manager | **pnpm** | Deterministic installs, workspace-friendly, faster and lower disk usage than npm/yarn. |
-| Persistence | **TypeORM + SQL.js** | TypeORM gives entity/DTO parity and repository abstraction. SQL.js keeps persistence embeddable and avoids native sqlite builds in constrained CI or serverless setups, while still offering a file-backed mode. |
-| Validation | **class-validator + ValidationPipe** | Declarative validation on DTOs, aligned with Nest pipes. |
-| Config | **@nestjs/config + Joi** | Centralized configuration with schema validation for safe bootstrapping. |
-| Logging & Errors | **Nest interceptors/filters + application/problem+json** | Single place for request logging and consistent error envelopes. |
+| Layer            | Choice                                                   | Why it fits here                                                                                                                                                                             |
+| ---------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Runtime          | **Node.js 20+**                                          | LTS                                                                                                                                                                                          |
+| Framework        | **NestJS 11**                                            | Fans of dependency injection. Making code loosely coupled and more maintainable. Rich ecosystem support. Opinionated framework practicing architecture such as controller, services and etc. |
+| Package manager  | **pnpm**                                                 | Faster and lower disk usage than npm/yarn.                                                                                                                                                   |
+| Persistence      | **TypeORM + SQL.js**                                     | TypeORM gives entity/DTO parity and repository abstraction. SQL.js provide a embedded databse with serverless setups, easy to setup and integration for poc                                  |
+| Validation       | **class-validator + ValidationPipe**                     | Declarative validation on DTOs, aligned with Nest pipes feature                                                                                                                              |
+| Config           | **@nestjs/config + Joi**                                 | Centralized configuration with schema validation                                                                                                                                             |
+| Logging & Errors | **Nest interceptors/filters + application/problem+json** | Single place for request logging and consistent error structure.                                                                                                                             |
 
 ### Installation & Local Dev
 
@@ -167,11 +167,9 @@ Happy shipping! 🚀
 
 If time allowed, the next improvements would include:
 
-1. **Security** – rotate to per-request JWTs or mTLS for stronger identity; add rate-limiting and audit logging; encrypt database at rest.
-2. **Persistence** – migrate from SQL.js to Postgres via TypeORM URL configuration, add migration tooling, and introduce a real tag join-table for scalable querying.
+1. **Security** – proper auth implementation with
+2. **Persistence** – migrate from SQL.js to Postgres via TypeORM URL configuration, add database migration tooling
 3. **Observability** – integrate OpenTelemetry, structured JSON logging, and health/readiness probes for orchestration.
-4. **Testing** – expand unit coverage (repository behaviors, guards), add contract tests (e.g., Pact) and mutation testing to harden validation paths.
+4. **Testing** – expand unit coverage (repository behaviors, guards), add contract tests (e.g., Pact)
 5. **API Quality** – document with Swagger/OpenAPI via `@nestjs/swagger`, add versioning, and provide richer search filters (date ranges, multi-tag logic).
-6. **Clean Code & DX** – enforce commit hooks (lint-staged), add CI pipeline, and provide seed scripts/fixtures for quicker QA setup.
-
-These steps would make the service production-grade while keeping the current architecture intact.
+6. **Clean Code & DX** – enforce commit hooks, and provide seed scripts/fixtures for quicker QA setup.
