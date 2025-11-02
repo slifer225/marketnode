@@ -1,0 +1,20 @@
+.DS_Store
+node_modules
+dist
+coverage
+logs
+*.log
+*.tmp
+*.tsbuildinfo
+.pnpm-store/
+
+# Environment files
+.env
+frontend/.env
+backend/.env
+
+# Editor settings
+.vscode/
+.idea/
+
+pnpm-debug.log*

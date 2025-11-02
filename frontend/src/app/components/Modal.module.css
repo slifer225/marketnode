@@ -1,0 +1,63 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.dialog {
+  position: relative;
+  width: min(32rem, 100%);
+  border-radius: 1rem;
+  background-color: #ffffff;
+  color: #0f172a;
+  box-shadow:
+    0 25px 50px -12px rgba(15, 23, 42, 0.35),
+    0 10px 10px -10px rgba(15, 23, 42, 0.2);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #475467;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  transition: background-color 120ms ease;
+}
+
+.closeButton:hover,
+.closeButton:focus-visible {
+  background-color: rgba(148, 163, 184, 0.15);
+  outline: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

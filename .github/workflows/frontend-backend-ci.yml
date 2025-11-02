@@ -1,0 +1,56 @@
+name: Frontend & Backend CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+env:
+  CI: true
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - project: frontend
+            lockfile: frontend/pnpm-lock.yaml
+            lintCommand: pnpm lint
+            testCommand: pnpm test
+          - project: backend
+            lockfile: backend/pnpm-lock.yaml
+            lintCommand: pnpm lint -- --fix=false
+            testCommand: pnpm test
+    name: ${{ matrix.project }} lint & test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: ${{ matrix.lockfile }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Test
+        run: pnpm test

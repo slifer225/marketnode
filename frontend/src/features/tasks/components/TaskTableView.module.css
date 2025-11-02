@@ -1,0 +1,173 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.toolbarHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(99, 102, 241, 0.45);
+  background-color: rgba(79, 70, 229, 0.18);
+  color: #312e81;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.primaryAction:hover,
+.primaryAction:focus-visible {
+  background-color: rgba(79, 70, 229, 0.28);
+  border-color: rgba(67, 56, 202, 0.6);
+  outline: none;
+}
+
+.pageSizeGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.pageSizeLabel {
+  font-weight: 600;
+}
+
+.pageSizeSelect {
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
+}
+
+.feedback {
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+}
+
+.feedbackError {
+  background-color: #fee4e2;
+  color: #b42318;
+  border: 1px solid rgba(180, 35, 24, 0.35);
+}
+
+.feedbackInfo {
+  background-color: #eff8ff;
+  color: #1d4ed8;
+  border: 1px solid rgba(29, 78, 216, 0.2);
+}
+
+.filters {
+  margin-top: 0.25rem;
+}
+
+.tableSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.deleteModal {
+  max-width: 28rem;
+}
+
+.deleteContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.deleteMessage {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1f2937;
+}
+
+.deleteError {
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  background-color: #fee4e2;
+  color: #b42318;
+  border: 1px solid rgba(180, 35, 24, 0.35);
+}
+
+.deleteActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.deleteButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+.deleteButtonSecondary {
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.deleteButtonSecondary:hover,
+.deleteButtonSecondary:focus-visible {
+  border-color: rgba(100, 116, 139, 0.75);
+  background-color: rgba(148, 163, 184, 0.12);
+  outline: none;
+}
+
+.deleteButtonDanger {
+  border: 1px solid rgba(228, 54, 71, 0.55);
+  background-color: rgba(244, 63, 94, 0.15);
+  color: #b91c1c;
+}
+
+.deleteButtonDanger:hover,
+.deleteButtonDanger:focus-visible {
+  border-color: rgba(220, 38, 38, 0.75);
+  background-color: rgba(252, 165, 165, 0.25);
+  outline: none;
+}
+
+.deleteButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}

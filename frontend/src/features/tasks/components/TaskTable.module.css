@@ -1,0 +1,136 @@
+@media (max-width: 720px) {
+  .tableWrapper {
+    overflow-x: auto;
+  }
+}
+
+.tableWrapper {
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 10px 15px -3px rgba(15, 23, 42, 0.08),
+    0 4px 6px -4px rgba(15, 23, 42, 0.04);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.thead {
+  background-color: rgba(148, 163, 184, 0.12);
+}
+
+.headerCell {
+  text-align: left;
+  padding: 0.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.sortedHeader {
+  color: #312e81;
+}
+
+.headerButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.headerButton:focus-visible {
+  outline: 2px solid rgba(67, 56, 202, 0.55);
+  outline-offset: 0.15rem;
+  border-radius: 0.3rem;
+}
+
+.sortIndicator {
+  font-size: 0.75rem;
+  color: inherit;
+}
+
+.row {
+  background-color: var(--task-background, #ffffff);
+  transition: background-color 120ms ease;
+}
+
+.row + .row {
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.cell {
+  padding: 0.75rem;
+  vertical-align: top;
+  color: #111827;
+}
+
+.statusSelect {
+  padding: 0.35rem 0.45rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  background-color: #f8fafc;
+  color: #1f2937;
+}
+
+.actionGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.actionButton {
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background-color: #f8fafc;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.deleteAction {
+  border-color: rgba(244, 63, 94, 0.35);
+  color: #dc2626;
+}
+
+
+.expiredCell {
+  color: #b91c1c;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.priorityBadge {
+  font-weight: 600;
+  color: #111827;
+}
+
+.noDueDate {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.tagList {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.tagChip {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background-color: rgba(59, 130, 246, 0.12);
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  font-weight: 600;
+}

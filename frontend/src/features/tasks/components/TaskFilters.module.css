@@ -1,0 +1,53 @@
+.form {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.input,
+.select {
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #111827;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.button {
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  background-color: #111827;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.buttonSecondary {
+  background-color: #f1f5f9;
+  color: #1f2937;
+}
+
+.checkboxField {
+  display: flex;
+  align-items: center;
+}
