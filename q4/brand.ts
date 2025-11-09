@@ -3,8 +3,15 @@ type UserId = Brand<string, "UserId">;
 type TaskId = Brand<string, "TaskId">;
 type HAHHA = Brand<string, "TaskId">;
 
+type TestBrand<T, B extends string> = T & { readonly __brand: B };
+type TestUserId = TestBrand<string, "UserId">;
+
+type integer = number & { __integer__: void };
+type INT = Brand<integer, "IntegerId">;
+
 const userId = "u1" as UserId;
 const taskId = "t1" as TaskId;
+const testBrandUser = "u1" as TestUserId;
 
 function getUser(id: UserId) {}
 function getTask(id: TaskId) {}

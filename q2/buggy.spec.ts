@@ -105,5 +105,14 @@ describe("getAdmins", () => {
     expect(admins).toHaveLength(1);
     expect(admins[0].role).toBe("admin");
     expect(isAdmin(admins[0])).toBe(true);
+
+    const singleAdmin = await getAdmins(["a1"]);
+
+    expect(singleAdmin).toHaveLength(1);
+    expect(singleAdmin[0].role).toBe("admin");
+    expect(isAdmin(singleAdmin[0])).toBe(true);
+
+    const nonAdmin = await getAdmins(["m1"]);
+    expect(nonAdmin).toHaveLength(0);
   });
 });

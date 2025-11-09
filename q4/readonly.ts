@@ -10,7 +10,7 @@ interface Config {
   db: { host: string; port: number };
   cache: { ttl: number };
 }
-type RuntimeConfig = DeepReadonlyExcept<Config, "cache">;
+type RuntimeConfig = DeepReadonlyExcept<Config, "cache" | "host">;
 
 const cfg: RuntimeConfig = {
   db: { host: "x", port: 5432 },
